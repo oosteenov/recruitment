@@ -173,20 +173,19 @@ export default class Validator {
   is(check, message) {
     this.state.promise = (
       this.state.promise || Promise.resolve(this.state)
-    ).then(
-      state =>
-        isEmpty(state.value)
-          ? state
-          : Promise.resolve()
-              .then(() => check(state.value, message))
-              .then(isValid => {
-                if (!isValid) state.addError(message);
-                return state;
-              })
-              .catch(err => {
-                state.addError(err.message);
-                return Promise.resolve(state);
-              }),
+    ).then(state =>
+      isEmpty(state.value)
+        ? state
+        : Promise.resolve()
+            .then(() => check(state.value, message))
+            .then(isValid => {
+              if (!isValid) state.addError(message);
+              return state;
+            })
+            .catch(err => {
+              state.addError(err.message);
+              return Promise.resolve(state);
+            }),
     );
     return this;
   }
