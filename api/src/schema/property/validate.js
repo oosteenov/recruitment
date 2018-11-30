@@ -8,6 +8,7 @@ export default async function(input: any, ctx: Context) {
     p
       .field('id')
       .fromGlobalId('Property')
+      .field('createdAt', { as: 'created_at' })
       .field('livingSurface', { as: 'living_surface' })
       .field('landSurface', { as: 'land_surface' })
       .field('numberOfRooms', { as: 'number_of_rooms' })
