@@ -130,9 +130,9 @@ export const Properties = (props: Props) => {
                 <TableHead>
                   <TableRow>
                     <TableCell>Created At</TableCell>
-                    <TableCell numeric>Number Of Rooms</TableCell>
                     <TableCell numeric>Living surface</TableCell>
                     <TableCell numeric>Land surface</TableCell>
+                    <TableCell numeric>Number Of Rooms</TableCell>
                     <TableCell numeric>Number of parkings</TableCell>
                     <TableCell />
                   </TableRow>
@@ -157,14 +157,6 @@ export const Properties = (props: Props) => {
                             query: { propertyId: node.id },
                           }}
                         >
-                          <TableCell numeric>{node.numberOfRooms}</TableCell>
-                        </Link>
-                        <Link
-                          href={{
-                            pathname: '/property',
-                            query: { propertyId: node.id },
-                          }}
-                        >
                           <TableCell numeric>{node.livingSurface}</TableCell>
                         </Link>
                         <Link
@@ -174,6 +166,14 @@ export const Properties = (props: Props) => {
                           }}
                         >
                           <TableCell numeric>{node.landSurface}</TableCell>
+                        </Link>
+                        <Link
+                          href={{
+                            pathname: '/property',
+                            query: { propertyId: node.id },
+                          }}
+                        >
+                          <TableCell numeric>{node.numberOfRooms}</TableCell>
                         </Link>
                         <Link
                           href={{
