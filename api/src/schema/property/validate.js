@@ -8,8 +8,11 @@ export default async function(input: any, ctx: Context) {
     p
       .field('id')
       .fromGlobalId('Property')
+      .field('createdAt', { as: 'created_at' })
       .field('livingSurface', { as: 'living_surface' })
-      .isFloat({ min: 20, max: 5000 }),
+      .field('landSurface', { as: 'land_surface' })
+      .field('numberOfRooms', { as: 'number_of_rooms' })
+      .field('numberOfParkings', { as: 'number_of_parkings' }),
   );
 
   return data;
